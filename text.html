@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function clickCounter() {
+if(typeof(Storage) !== "undefined") {
+if (localStorage.clickcount) {
+localStorage.clickcount = Number(localStorage.clickcount)+1;
+} else {
+localStorage.clickcount = 1;
+}
+document.getElementById("result").innerHTML = "Bạn đã nhấn vào nút trên " + localStorage.clickcount + " lần(s).";
+} else {
+document.getElementById("result").innerHTML = "Xin lỗi, trình duyệt web của bạn không hỗ trợ storage...";
+}
+}
+</script>
+</head>
+<body>
+<p><button onclick="clickCounter()" type="button">Kích đây!</button></p>
+<div id="result"></div>
+<p>Nhấn vào nút bên trên để thấy số lần truy cập của bạn.</p>
+<p>Đóng cửa sổ trình duyệt, và thao tác lại, Bạn sẽ thấy số lần nhấp vào nút sẽ được tiếp tục tăng thay vì đếm lại từ đầu.</p>
+</body>
+</html>
